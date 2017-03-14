@@ -19,5 +19,8 @@
   "homepage": "https://github.com/jdegner0129/slack-etiquette-bot#readme",
   "dependencies": {
     "@slack/client": "^3.8.1"
+  },
+  "engines": {
+    "node": "6.10.0"
   }
 }
