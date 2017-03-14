@@ -1,0 +1,23 @@
+{
+  "name": "slack-etiquette-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdegner0129/slack-etiquette-bot.git"
+  },
+  "author": "Jordan Degner <jdegner0129@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdegner0129/slack-etiquette-bot/issues"
+  },
+  "homepage": "https://github.com/jdegner0129/slack-etiquette-bot#readme",
+  "dependencies": {
+    "@slack/client": "^3.8.1"
+  }
+}
