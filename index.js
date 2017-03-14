@@ -1,7 +1,6 @@
 const { WebClient, RtmClient, MemoryDataStore, RTM_EVENTS, CLIENT_EVENTS } = require('@slack/client');
 
 const token = process.env.SLACK_API_TOKEN || '';
-const channelMemberThreshold = process.env.CHANNEL_MEMBER_THRESHOLD || 20;
 
 const rtm = new RtmClient(token, { logLevel: 'error', dataStore: new MemoryDataStore() });
 const web = new WebClient(token);
@@ -9,6 +8,8 @@ const web = new WebClient(token);
 rtm.start();
 
 const trySendMessageToChannel = ({ id, members }) => {
+  const channelMemberThreshold = process.env.CHANNEL_MEMBER_THRESHOLD || 20;
+  
   if (!members || members.length < channelMemberThreshold) {
     return;
   }
