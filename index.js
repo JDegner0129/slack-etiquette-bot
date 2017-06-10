@@ -7,10 +7,11 @@ const web = new WebClient(token);
 
 rtm.start();
 
-const trySendMessageToChannel = ({ id, members }) => {
+const trySendMessageToChannel = ({ id, name, members }) => {
   const channelMemberThreshold = process.env.CHANNEL_MEMBER_THRESHOLD || 20;
-  
-  if (!members || members.length < channelMemberThreshold) {
+  const channelBlacklist = (process.env.CHANNEL_BLACKLIST || '').split(',');
+
+  if (!members || members.length < channelMemberThreshold || channelBlacklist.includes(name)) {
     return;
   }
 
